@@ -7,7 +7,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew clean bootJar -x test
 
 # Fase de ejecución
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=build /app/build/libs/app.jar app.jar
 EXPOSE 8080
